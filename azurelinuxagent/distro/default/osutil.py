@@ -86,7 +86,7 @@ class DefaultOSUtil(object):
             cmd = "useradd -m {0}".format(username)
         retcode, out = shellutil.run_get_output(cmd)
         if retcode != 0:
-            raise OSUtilError(("Failed to create user account:{0}, "
+            logger.error(("Failed to create user account:{0}, "
                                "retcode:{1}, "
                                "output:{2}").format(username, retcode, out))
 
